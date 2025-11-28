@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Document</title>
+  <style>
+    html,body { height:100%; margin:0; font-family:system-ui,Segoe UI,Roboto,Arial; background:#f7f7f7; color:#111 }
+    header { padding:12px 18px; background:#fff; border-bottom:1px solid #eee; display:flex; gap:12px; align-items:center; }
+    main { padding:12px; height:calc(100% - 64px); box-sizing:border-box; }
+    .viewer { width:100%; height:100%; border:0; box-shadow:0 2px 8px rgba(0,0,0,0.06); background:#fff }
+    .actions { margin-left:auto; display:flex; gap:8px; align-items:center; }
+    a.button { background:#0366d6; color:white; padding:8px 12px; border-radius:6px; text-decoration:none; font-size:14px; }
+    a.alt { background:#e1e4e8; color:#111; padding:8px 12px; border-radius:6px; text-decoration:none; font-size:14px; }
+    .note { font-size:13px; color:#555 }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Document viewer</strong>
+    <div class="actions">
+      <a class="button" id="downloadLink" href="document.pdf" download>Download PDF</a>
+      <a class="alt" id="openRaw" href="document.pdf" target="_blank" rel="noopener">Open raw PDF</a>
+    </div>
+  </header>
+  <main>
+    <iframe id="pdfFrame" class="viewer" src="" title="PDF viewer" aria-label="PDF viewer"></iframe>
+    <p class="note">To update the file without changing its URL: replace the file named <code>document.pdf</code> in this repository (same filename and path). See repository README for exact steps.</p>
+  </main>
+  <script>
+    (function() {
+      var frame = document.getElementById('pdfFrame');
+      var cb = Date.now();
+      frame.src = 'document.pdf?t=' + cb;
+      document.getElementById('downloadLink').href = 'document.pdf';
+      document.getElementById('openRaw').href = 'document.pdf';
+    })();
+  </script>
+</body>
+</html>
