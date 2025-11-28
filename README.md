@@ -1,2 +1,0 @@
--just a simple repo for hosting a pdf for BORY
--inplemented README
