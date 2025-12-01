@@ -19,6 +19,8 @@ Deploy on GitHub Pages
      https://BORYgerget.github.io/BORY/
 3. The direct PDF URL will be:
    https://BORYgerget.github.io/BORY/document.pdf
+   or
+   https://BORYgerget.github.io/BORY/document2.pdf
 
 Replace the PDF
 - Using Git on your machine:
